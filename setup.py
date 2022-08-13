@@ -11,6 +11,9 @@ with open("README.md") as fh:
         else:
             break
 
+# pytest is pinned to 7.0.1 as this is last version for python 3.6
+extras = {"testing": ["pytest==7.0.1"]}
+
 setup(
     name="gym_miniworld",
     author="Farama Foundation",
@@ -20,6 +23,7 @@ setup(
     packages=["gym_miniworld", "gym_miniworld.envs"],
     long_description=long_description,
     python_requires=">=3.7, <3.11",
+    tests_require=extras["testing"],
     long_description_content_type="text/markdown",
     install_requires=[
         "gym>=0.24.0",
